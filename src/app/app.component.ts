@@ -7,4 +7,10 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'suu-campus-dining';
+
+  _opened: boolean = false;
+  
+  public _toggleSidebar(){
+    this._opened = !this._opened;
+  }
 }

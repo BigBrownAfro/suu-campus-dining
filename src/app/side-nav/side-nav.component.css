@@ -1,0 +1,35 @@
+.content{
+    background-color: rgb(35,31,32);
+}
+
+.list-holder{
+    display: flex;
+    flex-direction: column;
+}
+
+.list-holder > div{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: rgb(35,31,32);
+    color: white;
+    font-size: 1.5rem;
+    height: 6rem;
+    padding-top: .5rem;
+    padding-bottom: .5rem;
+}
+
+.list-holder > div:hover{
+    background-color: rgb(56, 49, 51);
+    cursor: pointer;
+}
+
+.list-holder > div:last-child{
+    border-bottom: none;
+}
+
+.list-holder > div > img{
+    margin-top: .3rem;
+    width : 4rem;
+    height: 4rem;
+}
