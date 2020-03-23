@@ -1,3 +1,7 @@
+*{
+    outline: none;
+}
+
 .content{
     background-color: rgb(35,31,32);
 }
