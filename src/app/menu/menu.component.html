@@ -1,1 +1,13 @@
-<p>menu works!</p>
+<!--burger image http://freepngimages.com/wp-content/uploads/2016/11/bacon-burger.png-->
+<div class="container">
+    <div *ngFor="let item of items" class="item-container">
+        <div class="item-image-placeholder-div"><img class="item-image" src="http://freepngimages.com/wp-content/uploads/2016/11/bacon-burger.png" alt="link: {{item.image}}" style="width: 20rem; height: 20rem;"></div>
+        <div class="item-text-div">
+            <div class="item-name">{{item.item_name}}</div>
+            <div class="item-bottom">
+                <button class="add-to-cart" (click)="addToCart(item)">Add to Cart</button>
+                <span class="item-price">{{item.price}}</span>
+            </div>
+        </div>
+    </div>
+</div>

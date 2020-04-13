@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import {Item} from '../Item';
+import { DataService } from '../data.service';
 
 @Component({
   selector: 'app-menu',
@@ -6,10 +8,18 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./menu.component.css']
 })
 export class MenuComponent implements OnInit {
+  items:Item[];
 
-  constructor() { }
+  constructor(private dataService: DataService) {
+    console.log("Creating Menu");
+    this.items = dataService.allItems;
+   }
 
   ngOnInit(): void {
+  }
+
+  addToCart(item:Item){
+
   }
 
 }
