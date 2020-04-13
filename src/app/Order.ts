@@ -4,7 +4,7 @@ export class Order{
     ITEM_ID:string;
     final_price:number;
     date:string;
-    is_favorite:boolean;
+    is_favorite:string;
 
     constructor(){
 

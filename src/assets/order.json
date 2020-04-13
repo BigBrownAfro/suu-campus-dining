@@ -13,7 +13,7 @@
     "ITEM_ID": "R09625",
     "final_price": "$6.94",
     "date": "01/25/2020",
-    "is_favorite": "TRUE"
+    "is_favorite": "FALSE"
   },
   {
     "ORDER_ID": "GG85489",
@@ -45,7 +45,7 @@
     "ITEM_ID": "L22218",
     "final_price": "$12.85",
     "date": "02/14/2020",
-    "is_favorite": "FALSE"
+    "is_favorite": "TRUE"
   },
   {
     "ORDER_ID": "AO37672",
@@ -261,7 +261,7 @@
     "ITEM_ID": "G49763",
     "final_price": "$18.16",
     "date": "07/04/2020",
-    "is_favorite": "TRUE"
+    "is_favorite": "FALSE"
   },
   {
     "ORDER_ID": "UZ32849",
