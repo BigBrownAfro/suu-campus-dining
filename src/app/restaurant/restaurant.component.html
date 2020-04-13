@@ -3,22 +3,18 @@
 <body>
 
 <div class="restaurant-list">
+  <div class="chick-fil-a" (click)="selectRestaurant('Chick-fil-a')">
+      <img src="https://www.chick-fil-a.com/-/media/images/cfacom/default-images/chick-fil-a-logo-vector.ashx" width="400" height="200">
+  </div>
 
-  <div class="chick-fil-a" routerLink="/menu">
-    <img src="https://www.chick-fil-a.com/-/media/images/cfacom/default-images/chick-fil-a-logo-vector.ashx" width="400" height="200">
-</div>
+  <div class="papa-johns" (click)="selectRestaurant('Pizza Place')">
+    <img src="https://upload.wikimedia.org/wikipedia/en/thumb/c/c4/Papa_John%27s_Pizza_logo.svg/1280px-Papa_John%27s_Pizza_logo.svg.png" width="400" height="200">
+    
+  </div>
 
-<div class="papa-johns" routerLink="/menu">
-  <img src="https://upload.wikimedia.org/wikipedia/en/thumb/c/c4/Papa_John%27s_Pizza_logo.svg/1280px-Papa_John%27s_Pizza_logo.svg.png" width="400" height="200">
-  
-</div>
-
-<div class="sandwich-place" routerLink="/menu">
-  <img src="https://images.getbento.com/s4oMzlfeRmS1Gc8dgyXL_logo.png?w=1200&fit=fill&auto=compress,format&h=600&bg=EDEDF1&pad=100" width="400" height="200">
-  
-</div>
-
-
+  <div class="sandwich-place" (click)="selectRestaurant('Sandwich Place')">
+    <img src="https://images.getbento.com/s4oMzlfeRmS1Gc8dgyXL_logo.png?w=1200&fit=fill&auto=compress,format&h=600&bg=EDEDF1&pad=100" width="400" height="200">
+  </div>
 </div>
 
 </body>

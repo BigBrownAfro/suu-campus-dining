@@ -9,17 +9,32 @@ import { DataService } from '../data.service';
 })
 export class MenuComponent implements OnInit {
   items:Item[];
+  restaurant:String;
 
   constructor(private dataService: DataService) {
     console.log("Creating Menu");
     this.items = dataService.allItems;
-   }
+    this.restaurant = dataService.selectedRestaurant;
+
+    this.filterItemsByRestaurant();
+  }
 
   ngOnInit(): void {
   }
 
   addToCart(item:Item){
 
+  }
+
+  filterItemsByRestaurant(){
+    this.items = [];
+    let allItems = this.dataService.allItems;
+    for (let i = 0; i < allItems.length; i++) {
+      let item = allItems[i];
+      if(item.store_name == this.restaurant){
+        this.items.push(item)
+      }
+    }
   }
 
 }

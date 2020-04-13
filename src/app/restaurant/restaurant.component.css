@@ -8,6 +8,10 @@
     
 }
 
+.restaurant-list > div{
+    cursor: pointer;
+}
+
 .chick-fil-a{
 
 }
@@ -18,4 +22,8 @@
 
 .sandwich-place{
   
+}
+
+.hello{
+    
 }

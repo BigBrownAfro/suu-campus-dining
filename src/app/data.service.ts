@@ -18,6 +18,7 @@ export class DataService {
   allUsers:User[];
   allOrders:Order[];
 
+  selectedRestaurant:string;
   itemsInCart:Item[];
 
   constructor() {
@@ -26,6 +27,7 @@ export class DataService {
     this.allUsers = [];
     this.allOrders = [];
 
+    this.selectedRestaurant = "";
     this.itemsInCart = [];
 
     this.retrieveAllItems();
@@ -58,6 +60,10 @@ export class DataService {
       this.allOrders.push(Order.from(json[i]));
       //console.log(this.allOrders[i].final_price);
     }
+  }
+
+  public chooseRestaurant(restaurant: string){
+    this.selectedRestaurant = restaurant;
   }
 
   addToCart(item:Item):number{
