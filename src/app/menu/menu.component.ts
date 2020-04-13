@@ -23,7 +23,7 @@ export class MenuComponent implements OnInit {
   }
 
   addToCart(item:Item){
-
+    this.dataService.addToCart(item);
   }
 
   filterItemsByRestaurant(){

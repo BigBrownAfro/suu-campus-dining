@@ -9,6 +9,7 @@ import { FavoritesComponent } from './favorites/favorites.component';
 import { HistoryComponent } from './history/history.component';
 import { MenuComponent } from './menu/menu.component';
 import { RestaurantComponent } from './restaurant/restaurant.component';
+import { CartComponent } from './cart/cart.component';
 
 const appRoutes: Routes = [
   {path: 'login', component: LoginComponent},
@@ -16,6 +17,7 @@ const appRoutes: Routes = [
   {path: 'menu', component: MenuComponent},
   {path: 'history', component: HistoryComponent},
   {path: 'favorites', component: FavoritesComponent},
+  {path: 'cart', component: CartComponent},
   {path: '', redirectTo: '/login', pathMatch: 'full'}
 ]
 
@@ -27,7 +29,8 @@ const appRoutes: Routes = [
     FavoritesComponent, 
     HistoryComponent, 
     MenuComponent,
-    RestaurantComponent
+    RestaurantComponent,
+    CartComponent
   ],
   imports: [
     RouterModule.forRoot(appRoutes),

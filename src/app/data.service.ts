@@ -72,6 +72,23 @@ export class DataService {
     return this.itemsInCart.push(item);
   }
 
+  removeFromCart(item:Item){
+    var newItems:Item[] = [];
+    var removed:boolean = false;
+
+    for(var i = 0; i < this.itemsInCart.length; i++){
+      if (this.itemsInCart[i].ITEM_ID != item.ITEM_ID){
+        newItems.push(this.itemsInCart[i]);
+      }else if (removed){
+        newItems.push(this.itemsInCart[i])
+      }else{
+        removed = true;
+      }
+    }
+
+    this.itemsInCart = newItems;
+  }
+
   getCartTotal():number{
     var total = 0;
     for (let i = 0; i < this.itemsInCart.length; i++) {
