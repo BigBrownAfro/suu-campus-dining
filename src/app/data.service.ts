@@ -18,6 +18,7 @@ export class DataService {
   allUsers:User[];
   allOrders:Order[];
 
+  user:string;
   selectedRestaurant:string;
   itemsInCart:Item[];
 
@@ -27,6 +28,7 @@ export class DataService {
     this.allUsers = [];
     this.allOrders = [];
 
+    this.user = "michaelJackson4";
     this.selectedRestaurant = "";
     this.itemsInCart = [];
 
