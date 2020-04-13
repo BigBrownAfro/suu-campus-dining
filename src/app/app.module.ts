@@ -8,9 +8,11 @@ import { LoginComponent } from './login/login.component';
 import { FavoritesComponent } from './favorites/favorites.component';
 import { HistoryComponent } from './history/history.component';
 import { MenuComponent } from './menu/menu.component';
+import { RestaurantComponent } from './restaurant/restaurant.component';
 
 const appRoutes: Routes = [
   {path: 'login', component: LoginComponent},
+  {path: 'restaurant', component: RestaurantComponent},
   {path: 'menu', component: MenuComponent},
   {path: 'history', component: HistoryComponent},
   {path: 'favorites', component: FavoritesComponent},
@@ -24,7 +26,8 @@ const appRoutes: Routes = [
     LoginComponent, 
     FavoritesComponent, 
     HistoryComponent, 
-    MenuComponent
+    MenuComponent,
+    RestaurantComponent
   ],
   imports: [
     RouterModule.forRoot(appRoutes),
