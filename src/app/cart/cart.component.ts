@@ -9,21 +9,26 @@ import { DataService } from '../data.service';
 })
 export class CartComponent implements OnInit {
   items:Item[];
+  cartTotal:number;
 
-  constructor(private dateService:DataService) {
+  constructor(private dataService:DataService) {
     this.items = [];
+
     this.populateCart();
+
+    this.cartTotal = dataService.getCartTotal();
   }
 
   ngOnInit(): void {
   }
 
   populateCart(){
-    this.items = this.dateService.itemsInCart;
+    this.items = this.dataService.itemsInCart;
   }
 
   removeFromCart(item:Item){
-    this.dateService.removeFromCart(item);
-    this.items = this.dateService.itemsInCart;
+    this.dataService.removeFromCart(item);
+    this.items = this.dataService.itemsInCart;
+    this.cartTotal = this.dataService.getCartTotal();
   }
 }

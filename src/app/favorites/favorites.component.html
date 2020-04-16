@@ -5,7 +5,7 @@
                 <div *ngIf="order.ITEM_ID == item.ITEM_ID">
                     <div><img src="http://freepngimages.com/wp-content/uploads/2016/11/bacon-burger.png" alt="link:" style="width: 20rem; height: 20rem;"></div> 
                         {{item.item_name}}
-                        <div class="item-price">{{order.final_price}}</div>
+                        <div class="item-price">${{order.final_price}}</div>
                     </div>
                 </div>
             <div class="item-bottom">

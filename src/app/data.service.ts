@@ -18,9 +18,11 @@ export class DataService {
   allUsers:User[];
   allOrders:Order[];
 
-  user:string;
+  userId:string;
   selectedRestaurant:string;
   itemsInCart:Item[];
+
+  isSignedIn:boolean;
 
   constructor() {
     console.log("Creating Data Service");
@@ -28,13 +30,14 @@ export class DataService {
     this.allUsers = [];
     this.allOrders = [];
 
-    this.user = "michaelJackson4";
-    this.selectedRestaurant = "";
-    this.itemsInCart = [];
-
     this.retrieveAllItems();
     this.retrieveAllUsers();
     this.retrieveAllOrders();
+
+    this.userId = "";
+    this.selectedRestaurant = "";
+    this.itemsInCart = [];
+    this.isSignedIn = false;
   }
 
   private retrieveAllItems(){
@@ -64,7 +67,27 @@ export class DataService {
     }
   }
 
-  public chooseRestaurant(restaurant: string){
+  login(id:string, pass:string):boolean{
+    var verified = false;
+    //For each user in the database
+    for(var i = 0; i < this.allUsers.length; i++){
+      let i_user = this.allUsers[i];
+      //Check to see if the id entered matches an existing user
+      if(i_user.USER_ID.toLowerCase() == id.toLowerCase()){
+        //Verify the password entered matches the password tied to that user
+        if(i_user.password == pass){
+          //Sign in the user
+          verified = true;
+          this.isSignedIn = true;
+          this.userId = i_user.USER_ID;
+        }
+      }
+    }
+    //Return whether or not the user was signed in
+    return verified;
+  }
+
+  chooseRestaurant(restaurant:string){
     this.selectedRestaurant = restaurant;
   }
 
@@ -73,15 +96,22 @@ export class DataService {
   }
 
   removeFromCart(item:Item){
-    var newItems:Item[] = [];
-    var removed:boolean = false;
+    var newItems:Item[] = []; //An item list that will hold the remaining items after removal
+    var removed:boolean = false; //boolean stating whether or not the item to remove was accounted for
 
+    //for every item in the cart
     for(var i = 0; i < this.itemsInCart.length; i++){
+      //If the item in cart is not the one to be removed
       if (this.itemsInCart[i].ITEM_ID != item.ITEM_ID){
+        //put the item in the new list
         newItems.push(this.itemsInCart[i]);
+      //If the item in the cart has the same name as the item to remove but a copy has already been removed
       }else if (removed){
+        //put the item in the new list
         newItems.push(this.itemsInCart[i])
+      //If the item is the one that needs to be removed
       }else{
+        //Don't add it to the new list
         removed = true;
       }
     }
@@ -90,11 +120,36 @@ export class DataService {
   }
 
   getCartTotal():number{
-    var total = 0;
+    var total:number = 0;
     for (let i = 0; i < this.itemsInCart.length; i++) {
       total += this.itemsInCart[i].price;
+      console.log("item price: " + total);
     }
     return total;
+  }
+
+  findItemByName(itemName:string):Item{
+    for(var i = 0; i < this.allItems.length; i++){
+      var i_item = this.allItems[i];
+      
+      if(i_item.item_name == itemName){
+        return i_item;
+      }
+    }
+
+    return null;
+  }
+
+  findItemById(itemId:string):Item{
+    for(var i = 0; i < this.allItems.length; i++){
+      var i_item = this.allItems[i];
+      
+      if(i_item.ITEM_ID == itemId){
+        return i_item;
+      }
+    }
+
+    return null;
   }
 
 }

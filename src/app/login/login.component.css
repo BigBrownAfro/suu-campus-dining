@@ -50,6 +50,12 @@ input:focus{
 
 .login-button:hover{
     cursor: pointer;
+    background-color: rgb(82, 172, 47);
+}
+
+.login-button:active{
+    cursor: pointer;
+    background-color: rgb(62, 129, 35);
 }
 
 .help > a{

@@ -3,7 +3,7 @@
         <div class="item-text-div">
             
             <div class="order-date">{{order.date}}</div>
-            <span class="item-price">{{order.final_price}}</span>
+            <span class="item-price">${{order.final_price}}</span>
             <div *ngFor="let item of items">
                 <div *ngIf="order.ITEM_ID == item.ITEM_ID">
                 {{item.item_name}}</div></div>

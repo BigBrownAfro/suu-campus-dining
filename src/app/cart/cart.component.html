@@ -1,4 +1,4 @@
-<p style="font-size: xx-large; margin: 2rem;">CART</p>
+<p style="font-size: xx-large; margin: 2rem;">CART : ${{cartTotal}}</p>
 <div class="container" style="display: flex; flex-direction: column;">
     <div *ngFor="let item of items" class="item-container" style="margin-left: 2rem;">
         <div>
@@ -8,7 +8,7 @@
             <div>{{item.item_name}}</div>
             <div>
                 <button (click)="removeFromCart(item)">Remove From Cart</button>
-                <span>{{item.price}}</span>
+                <span>${{item.price}}</span>
             </div>
         </div>
     </div>

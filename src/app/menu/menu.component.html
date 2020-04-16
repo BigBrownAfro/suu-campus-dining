@@ -1,14 +1,17 @@
 <!--burger image http://freepngimages.com/wp-content/uploads/2016/11/bacon-burger.png-->
 <div class="container">
-    <div *ngFor="let item of items" class="item-container">
+    <div *ngFor="let item of items" class="item-container"  style="width: 20rem; margin: 2rem;">
         <div>
-            <img src="http://freepngimages.com/wp-content/uploads/2016/11/bacon-burger.png" alt="link: {{item.image}}" style="width: 20rem; height: 20rem;">
+            <img src="http://freepngimages.com/wp-content/uploads/2016/11/bacon-burger.png" alt="link: {{item.image}}"  style="width: 20rem; height: 20rem;">
         </div>
         <div>
-            <div>{{item.item_name}}</div>
-            <div>
-                <button (click)="addToCart(item)">Add to Cart</button>
-                <span>{{item.price}}</span>
+            <div style="font-size: large; width: auto; display: flex; justify-content: space-between;">
+                <span style="width: auto">{{item.item_name}}</span>
+                <span style="width: auto; text-align: right;">${{item.price}}</span>
+            </div>
+            <div style="font-size: small;">{{item.description}}</div>
+            <div style="margin-top: .5rem;">
+                <button (click)="addToCart(item)" style="float: right;">Add to Cart</button>
             </div>
         </div>
     </div>

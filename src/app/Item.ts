@@ -20,6 +20,7 @@ export class Item{
     }*/
 
     static from(json){
-        return Object.assign(new Item(), json);
+        var item = Object.assign(new Item(), json);
+        return item;
     }
 }

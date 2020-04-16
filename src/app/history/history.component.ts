@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {Order} from '../Order';
 import {Item} from '../Item';
 import { DataService } from '../data.service';
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -14,10 +15,11 @@ export class HistoryComponent implements OnInit {
   items:Item[];
   user:String;
 
-  constructor(private dataService: DataService) {
+  constructor(private dataService: DataService, private router:Router) {
     this.orders = dataService.allOrders;
     this.items = dataService.allItems;
-    this.user = "elijahwilliams2";
+    this.user = dataService.userId;
+
     this.populateOrders();
    }
 
