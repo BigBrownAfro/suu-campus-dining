@@ -26,8 +26,8 @@ export class HistoryComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  addToCart(order:Order){
-
+  favorite(order:Order){
+    this.dataService.markOrderAsFavorite(order);
   }
 
   populateOrders(){

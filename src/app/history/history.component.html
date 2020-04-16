@@ -6,12 +6,13 @@
             <span class="item-price">${{order.final_price}}</span>
             <div *ngFor="let item of items">
                 <div *ngIf="order.ITEM_ID == item.ITEM_ID">
-                {{item.item_name}}</div></div>
+                    {{item.item_name}}
+                </div>
+            </div>
             <div class="item-bottom">
-                <button class="add-to-cart" (click)="addToCart(order)">Favorite</button>
+                <button (click)="favorite(order)">Favorite</button>
                 <br><br>
             </div>
-            
         </div>
     </div>
 </div>
