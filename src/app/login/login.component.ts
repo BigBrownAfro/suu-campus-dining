@@ -10,12 +10,14 @@ import { Router } from '@angular/router';
 export class LoginComponent implements OnInit {
   failedLogin:boolean;
   failedAttempts:number;
+  
 
   constructor(private dataService:DataService, private router:Router) { }
 
   ngOnInit(): void {
     this.failedLogin = false;
     this.failedAttempts = 0;
+
   }
 
   //Attempts login using the data service with the username and password text fields

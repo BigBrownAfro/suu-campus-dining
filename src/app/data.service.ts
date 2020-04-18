@@ -38,6 +38,8 @@ export class DataService {
     this.selectedRestaurant = "";
     this.itemsInCart = [];
     this.isSignedIn = false;
+    //this.genHashes();
+    
   }
 
   private retrieveAllItems(){
@@ -58,6 +60,15 @@ export class DataService {
     }
   }
 
+  private genHashes(){
+    const bcrypt = require('./custom-bcrypt')
+    for(var i = 0; i < this.allUsers.length; i++){
+      let temp_user = this.allUsers[i];
+      console.log(temp_user.USER_ID)
+      console.log(bcrypt.hash(temp_user.password))
+    }
+  }
+
   private retrieveAllOrders(){
     var json = this.orderJson
 
@@ -68,6 +79,7 @@ export class DataService {
   }
 
   login(id:string, pass:string):boolean{
+    const bcrypt = require('./custom-bcrypt')
     var verified = false;
     //For each user in the database
     for(var i = 0; i < this.allUsers.length; i++){
@@ -75,7 +87,8 @@ export class DataService {
       //Check to see if the id entered matches an existing user
       if(i_user.USER_ID.toLowerCase() == id.toLowerCase()){
         //Verify the password entered matches the password tied to that user
-        if(i_user.password == pass){
+        console.log(i_user.password)
+        if(bcrypt.compare(pass,i_user.password)){
           //Sign in the user
           verified = true;
           this.isSignedIn = true;
