@@ -1,0 +1,12 @@
+.checkout{
+    margin-top: 1rem; 
+    margin-left: 2rem;
+    font-size: xx-large;
+    height: 3rem; 
+    color: rgb(255, 251, 251); 
+    background-color: rgb(168, 25, 25);
+}
+
+.checkout:hover{
+    cursor: pointer;
+}

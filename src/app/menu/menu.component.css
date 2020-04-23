@@ -2,3 +2,16 @@
     display: flex;
     flex-wrap: wrap;
 }
+
+.back{
+    margin-top: 1rem; 
+    margin-left: 2rem;
+    font-size: x-large;
+    height: 2rem; 
+    color: rgb(255, 251, 251); 
+    background-color: rgb(168, 25, 25);
+}
+
+.back:hover{
+    cursor: pointer;
+}

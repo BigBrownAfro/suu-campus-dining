@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {Item} from '../Item';
 import { DataService } from '../data.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-menu',
@@ -11,7 +12,7 @@ export class MenuComponent implements OnInit {
   items:Item[];
   restaurant:String;
 
-  constructor(private dataService: DataService) {
+  constructor(private dataService: DataService, private router: Router) {
     console.log("Creating Menu");
     this.items = dataService.allItems;
     this.restaurant = dataService.selectedRestaurant;
@@ -35,6 +36,10 @@ export class MenuComponent implements OnInit {
         this.items.push(item)
       }
     }
+  }
+
+  goBack(){
+    this.router.navigateByUrl("restaurant");
   }
 
 }
