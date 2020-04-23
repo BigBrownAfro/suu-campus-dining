@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ElementRef } from '@angular/core';
 import {Order} from '../Order';
 import {Item} from '../Item';
 import { DataService } from '../data.service';
@@ -15,7 +15,7 @@ export class HistoryComponent implements OnInit {
   items:Item[];
   user:String;
 
-  constructor(private dataService: DataService, private router:Router) {
+  constructor(private dataService: DataService, private router:Router, private elementRef:ElementRef) {
     this.orders = dataService.allOrders;
     this.items = dataService.allItems;
     this.user = dataService.userId;

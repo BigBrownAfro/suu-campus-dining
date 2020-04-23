@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Item } from '../Item';
 import { DataService } from '../data.service';
+import { Order } from '../Order';
 
 @Component({
   selector: 'app-cart',
@@ -30,5 +31,30 @@ export class CartComponent implements OnInit {
     this.dataService.removeFromCart(item);
     this.items = this.dataService.itemsInCart;
     this.cartTotal = this.dataService.getCartTotal();
+  }
+
+  createOrder(){
+    if (this.items.length <= 0){
+      return;
+    }
+
+    var newOrder:Order = new Order();
+
+    newOrder.ORDER_ID = "O_" + this.dataService.userId + this.cartTotal;
+    newOrder.USER_ID = this.dataService.userId;
+    newOrder.ITEM_ID = this.items[0].ITEM_ID;
+
+    let date:Date = new Date();
+
+    newOrder.date = (date.getMonth() + 1) + "/" + date.getDate() + "/" + date.getFullYear();
+    newOrder.final_price = this.cartTotal;
+    newOrder.is_favorite = "FALSE";
+
+    this.dataService.allOrders.push(newOrder);
+
+    this.dataService.itemsInCart = [];
+
+    this.items = [];
+    this.cartTotal = 0;
   }
 }

@@ -25,18 +25,23 @@ export class FavoritesComponent implements OnInit {
    }
 
   ngOnInit(): void {
+
   }
 
   //Add an item from a previous order to the cart
   addToCart(order:Order){
     //Find the item based on the items id given by the order
     let item = this.dataService.findItemById(order.ITEM_ID);
-
     //If the item was found
     if(item){
       //Add the item to the cart
       this.dataService.addToCart(item);
     }
+  }
+
+  removeFromFavorites(order:Order){
+    this.dataService.removeOrderAsFavorite(order);
+    this.populateOrders();
   }
 
   populateOrders(){

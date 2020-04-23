@@ -1,7 +1,7 @@
-<div class="container">
+<div class="container" style="margin: 2rem;">
+    <div style="font-size: xx-large;">Order History:</div>
     <div *ngFor="let order of orders" class="item-container">
-        <div class="item-text-div">
-            
+        <div class="item-text-div" style="margin-top: 1rem;">
             <div class="order-date">{{order.date}}</div>
             <span class="item-price">${{order.final_price}}</span>
             <div *ngFor="let item of items">
@@ -10,7 +10,7 @@
                 </div>
             </div>
             <div class="item-bottom">
-                <button (click)="favorite(order)">Favorite</button>
+                <button (click)="favorite(order)">Add to Favorites</button>
                 <br><br>
             </div>
         </div>

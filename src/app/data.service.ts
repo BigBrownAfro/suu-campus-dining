@@ -178,4 +178,16 @@ export class DataService {
     //fs.writeFile("newOrders.json", data);
     console.log(JSON.stringify(this.allOrders));
   }
+
+  removeOrderAsFavorite(order:Order){
+    for(var i = 0; i < this.allOrders.length; i++){
+      var i_order = this.allOrders[i];
+      if(i_order.ORDER_ID == order.ORDER_ID){
+        i_order.is_favorite = "FALSE";
+      }
+    }
+    //var data = JSON.stringify(this.allOrders);
+    //var fs = require("fs");
+    //fs.writeFile("newOrders.json", data);
+  }
 }

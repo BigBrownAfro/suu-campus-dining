@@ -1,4 +1,5 @@
-<div class="container">
+<div class="container" style="margin: 2rem;">
+    <div style="font-size: xx-large;">Favorites:</div>
     <div *ngFor="let order of orders" class="item-container">
         <div class="item-text-div">
             <div *ngFor="let item of items">
@@ -9,10 +10,10 @@
                     </div>
                 </div>
             <div class="item-bottom">
-                <button class="add-to-cart" (click)="addToCart(order)">Re-Order</button>
+                <button class="add-to-cart" (click)="addToCart(order)">Add to Cart</button>
+                <button class="add-to-cart" (click)="removeFromFavorites(order)">Remove Favorite</button>
                 <br><br>
             </div>
-            
         </div>
     </div>
 </div>
