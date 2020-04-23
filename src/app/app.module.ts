@@ -10,6 +10,7 @@ import { HistoryComponent } from './history/history.component';
 import { MenuComponent } from './menu/menu.component';
 import { RestaurantComponent } from './restaurant/restaurant.component';
 import { CartComponent } from './cart/cart.component';
+import { ProfileComponent } from './profile/profile.component';
 
 const appRoutes: Routes = [
   {path: 'login', component: LoginComponent},
@@ -18,6 +19,7 @@ const appRoutes: Routes = [
   {path: 'history', component: HistoryComponent},
   {path: 'favorites', component: FavoritesComponent},
   {path: 'cart', component: CartComponent},
+  {path: 'profile', component: ProfileComponent},
   {path: '', redirectTo: '/login', pathMatch: 'full'}
 ]
 
@@ -30,7 +32,8 @@ const appRoutes: Routes = [
     HistoryComponent, 
     MenuComponent,
     RestaurantComponent,
-    CartComponent
+    CartComponent,
+    ProfileComponent
   ],
   imports: [
     RouterModule.forRoot(appRoutes),

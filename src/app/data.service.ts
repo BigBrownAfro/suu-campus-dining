@@ -5,6 +5,7 @@ import { Order } from './Order';
 import * as itemData from '../assets/item.json'
 import * as userData from '../assets/user.json'
 import * as orderData from '../assets/order.json'
+import { Router } from '@angular/router';
 
 @Injectable({
   providedIn: 'root'
@@ -24,7 +25,7 @@ export class DataService {
 
   isSignedIn:boolean;
 
-  constructor() {
+  constructor(private router:Router) {
     console.log("Creating Data Service");
     this.allItems = [];
     this.allUsers = [];
@@ -39,7 +40,6 @@ export class DataService {
     this.itemsInCart = [];
     this.isSignedIn = false;
     //this.genHashes();
-    
   }
 
   private genHashes(){
@@ -99,6 +99,14 @@ export class DataService {
     }
     //Return whether or not the user was signed in
     return verified;
+  }
+
+  logout(){
+    this.isSignedIn = false;
+    this.userId = "";
+    this.itemsInCart = [];
+
+    this.router.navigateByUrl("login");
   }
 
   chooseRestaurant(restaurant:string){

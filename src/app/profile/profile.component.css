@@ -1,0 +1,27 @@
+.logout{
+    margin-top: 1rem; 
+    margin-left: 2rem;
+    font-size: x-large;
+    height: 2.5rem; 
+    color: rgb(255, 251, 251); 
+    background-color: rgb(168, 25, 25);
+}
+
+.logout:hover{
+    cursor: pointer;
+}
+
+img{
+    width: 15rem; 
+    height: 15rem;
+}
+
+img:hover{
+    cursor: pointer;
+}
+
+.img-text{
+    text-align: center; 
+    font-size: x-large; 
+    margin-top: 1rem;
+}
